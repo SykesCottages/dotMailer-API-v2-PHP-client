@@ -1,8 +1,9 @@
 <?php
 /**
- *
+ * Container
  *
  * @author Roman Piták <roman@pitak.net>
+ * @package romanpitak/dotmailer-api-v2-client
  *
  */
 
@@ -12,12 +13,13 @@ use DotMailer\Api\Resources\IResources;
 use DotMailer\Api\Resources\Resources;
 use DotMailer\Api\Rest\Client;
 
+/** Class Container */
 final class Container implements IContainer {
 
-	/** @var array */
+	/** @var array $credentials Credentials container */
 	private $credentials = array();
 
-	/** @var array */
+	/** @var array $containers Holds object instances */
 	private $containers = array();
 
 	private function __construct($credentials = array()) {
@@ -55,6 +57,8 @@ final class Container implements IContainer {
 	}
 
 	/**
+	 * Get credentials from the credentials container.
+	 *
 	 * @param string $name
 	 * @return array of credentials
 	 * @throws Exception
@@ -67,6 +71,8 @@ final class Container implements IContainer {
 	}
 
 	/**
+	 * Try to create Resource, then try to create a Container
+	 *
 	 * @param string $name
 	 * @return IResources|IContainer
 	 */
@@ -82,7 +88,13 @@ final class Container implements IContainer {
 	 * ========== IContainer ==========
 	 */
 
-	/** @inheritdoc */
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @param string $name
+	 * @return IResources
+	 * @throws Exception
+	 */
 	public function getResources($name) {
 		if (!isset($this->containers[$name])) {
 			$this->containers[$name] = self::newResources($this->getCredentials($name));
@@ -94,7 +106,13 @@ final class Container implements IContainer {
 		return $resources;
 	}
 
-	/** @inheritdoc */
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @param string $name
+	 * @return IContainer
+	 * @throws Exception
+	 */
 	public function getContainer($name) {
 		if (!isset($this->containers[$name])) {
 			$this->containers[$name] = self::newContainer($this->getCredentials($name));

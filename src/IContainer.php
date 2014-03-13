@@ -1,19 +1,17 @@
 <?php
 /**
- * 
+ * IContainer
  * 
  * @author Roman Piták <roman@pitak.net>
- * 
+ * @package romanpitak/dotmailer-api-v2-client
+ *
  */
 
 namespace DotMailer\Api;
 
 use DotMailer\Api\Resources\IResources;
 
-/**
- * Interface IContainer
- *
- */
+/** Interface IContainer */
 interface IContainer extends \ArrayAccess, \Iterator{
 
 	const USERNAME = 'username';
