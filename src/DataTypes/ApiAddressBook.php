@@ -1,24 +1,17 @@
 <?php
 /**
- * 
- * 
+ * ApiAddressBook
+ *
  * @author Roman Piták <roman@pitak.net>
- * 
+ * @package romanpitak/dotmailer-api-v2-client
+ * @subpackage DataTypes
+ *
  */
- 
- 
 
 namespace DotMailer\Api\DataTypes;
 
-/**
- * Class ApiAddressBook
- *
- * @property XsInt id
- * @property XsString name
- * @property ApiAddressBookVisibility visibility
- * @property XsInt contacts
- */
-final class ApiAddressBook extends JsonObject {
+/** Class ApiAddressBook */
+final class ApiAddressBook extends JsonObject implements IApiAddressBook {
 
 	protected function getProperties() {
 		return array(

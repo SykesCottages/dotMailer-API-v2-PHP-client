@@ -1,25 +1,19 @@
 <?php
 /**
- * 
- * 
+ * ApiAccountProperty
+ *
  * @author Roman Piták <roman@pitak.net>
- * 
+ * @package romanpitak/dotmailer-api-v2-client
+ * @subpackage DataTypes
+ *
  */
- 
- 
 
 namespace DotMailer\Api\DataTypes;
 
+/** Class ApiAccountProperty */
+final class ApiAccountProperty extends JsonObject implements IApiAccountProperty {
 
-/**
- * Class ApiAccountProperty
- *
- * @property XsString name
- * @property XsString type
- * @property XsString value
- */
-final class ApiAccountProperty extends JsonObject {
-
+	/** {@inheritdoc} */
 	protected function getProperties() {
 		return array(
 			'Name' => 'XsString',
