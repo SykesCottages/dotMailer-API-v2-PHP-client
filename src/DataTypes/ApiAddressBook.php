@@ -10,9 +10,12 @@
 
 namespace DotMailer\Api\DataTypes;
 
-/** Class ApiAddressBook */
+/**
+ * Class ApiAddressBook
+ */
 final class ApiAddressBook extends JsonObject implements IApiAddressBook {
 
+	/** {@inheritdoc} */
 	protected function getProperties() {
 		return array(
 			'Id' => 'XsInt',

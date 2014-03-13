@@ -25,5 +25,7 @@ interface IDataType {
 	 */
 	public function toJson();
 
+	// TODO add urlencode() method
+
 }
 

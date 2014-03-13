@@ -10,7 +10,9 @@
 
 namespace DotMailer\Api\DataTypes;
 
-/** Class ApiAccountProperty */
+/**
+ * Class ApiAccountProperty
+ */
 final class ApiAccountProperty extends JsonObject implements IApiAccountProperty {
 
 	/** {@inheritdoc} */

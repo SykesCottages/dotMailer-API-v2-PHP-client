@@ -1,14 +1,16 @@
 <?php
 /**
- *
+ * JsonArray
  *
  * @author Roman Piták <roman@pitak.net>
+ * @package romanpitak/dotmailer-api-v2-client
+ * @subpackage DataTypes
  *
  */
 
 namespace DotMailer\Api\DataTypes;
 
-abstract class JsonArray extends MagicArray {
+abstract class JsonArray extends MagicArray implements IJsonArray {
 
 	/**
 	 * Get data class name

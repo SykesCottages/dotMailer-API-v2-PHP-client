@@ -1,6 +1,6 @@
 <?php
 /**
- * IApiAccountPropertyList
+ * IJsonArray
  *
  * @author Roman Piták <roman@pitak.net>
  * @package romanpitak/dotmailer-api-v2-client
@@ -10,9 +10,10 @@
 
 namespace DotMailer\Api\DataTypes;
 
-/**
- * Class ApiAddressBookList
- */
-final class ApiAddressBookList extends JsonArray implements IApiAddressBookList {
+/** Interface IJsonArray */
+interface IJsonArray extends IMagicArray {
 
-}
+	/** @return int */
+	public function key();
+
+} 

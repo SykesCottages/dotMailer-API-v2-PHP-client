@@ -1,14 +1,16 @@
 <?php
 /**
- *
+ * MagicArray
  *
  * @author Roman Piták <roman@pitak.net>
+ * @package romanpitak/dotmailer-api-v2-client
+ * @subpackage DataTypes
  *
  */
 
 namespace DotMailer\Api\DataTypes;
 
-abstract class MagicArray implements \ArrayAccess, \Iterator, IDataType {
+abstract class MagicArray extends Mixed implements IMagicArray {
 
 	/** @var IDataType[] */
 	protected $data = array();
@@ -71,7 +73,7 @@ abstract class MagicArray implements \ArrayAccess, \Iterator, IDataType {
 	 * ========== IDataType ==========
 	 */
 
-	function toArray() {
+	public function toArray() {
 		$data = $this->data;
 		foreach ($data as $key => $value) {
 			$data[$key] = $value->toArray();
@@ -79,33 +81,29 @@ abstract class MagicArray implements \ArrayAccess, \Iterator, IDataType {
 		return $data;
 	}
 
-	function __toString() {
-		return $this->toJson();
-	}
-
 	/*
 	 * ========== ArrayAccess ==========
 	 */
 
-	function offsetExists($offset) {
+	public function offsetExists($offset) {
 		$offset = $this->convertOffset($offset);
 		$this->checkOffset($offset);
 		return isset($this->data[$offset]);
 	}
 
-	function offsetGet($offset) {
+	public function offsetGet($offset) {
 		$offset = $this->convertOffset($offset);
 		$this->checkOffset($offset);
 		return $this->data[$offset];
 	}
 
-	function offsetSet($offset, $value) {
+	public function offsetSet($offset, $value) {
 		$offset = $this->convertOffset($offset);
 		$this->checkOffset($offset);
 		$this->data[$offset] = $this->convertValue($value, $offset);
 	}
 
-	function offsetUnset($offset) {
+	public function offsetUnset($offset) {
 		$offset = $this->convertOffset($offset);
 		$this->checkOffset($offset);
 		unset($this->data[$offset]);
