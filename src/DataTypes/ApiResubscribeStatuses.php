@@ -18,10 +18,6 @@ final class ApiResubscribeStatuses extends Enum {
 	const CONTACT_CANNOT_BE_UNSUBSCRIBED = 'ContactCannotBeUnsuppressed';
 	const NOT_AVAILABLE_IN_THIS_VERSION = 'NotAvailableInThisVersion';
 
-	protected function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::CONTACT_ADDED,

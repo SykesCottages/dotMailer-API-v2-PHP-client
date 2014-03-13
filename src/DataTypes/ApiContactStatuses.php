@@ -29,10 +29,6 @@ final class ApiContactStatuses extends Enum {
 	const NO_MX_RECORD = 'NoMxRecord';
 	const NOT_AVAILABLE_IN_THIS_VERSION = 'NotAvailableInThisVersion';
 
-	protected function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::SUBSCRIBED,

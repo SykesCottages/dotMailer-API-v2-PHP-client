@@ -24,10 +24,6 @@ final class ApiRoiDetailDataTypes extends Enum {
 	 * ========== Enum ==========
 	 */
 
-	protected function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::STRING,

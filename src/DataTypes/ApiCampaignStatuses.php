@@ -23,10 +23,6 @@ final class ApiCampaignStatuses extends Enum {
 	const TRIGGERED = 'Delete';
 	const NOT_AVAILABLE_IN_THIS_VERSION = 'NotAvailableInThisVersion';
 
-	protected function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::UNSENT,

@@ -22,10 +22,6 @@ final class ApiContactImportStatuses extends Enum {
 	const EXCEEDS_ALLOWED_CONTACT_LIMIT = 'ExceedsAllowedContactLimit';
 	const NOT_AVAILABLE_IN_THIS_VERSION = 'NotAvailableInThisVersion';
 
-	protected function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::FINISHED,

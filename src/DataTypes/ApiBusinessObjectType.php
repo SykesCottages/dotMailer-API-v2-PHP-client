@@ -30,10 +30,6 @@ final class ApiBusinessObjectType extends Enum {
 	 * ========== Enum ==========
 	 */
 
-	protected function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::CAMPAIGN,

@@ -20,10 +20,6 @@ final class ApiCampaignSendStatuses extends Enum {
 	const CANCELLED = 'Cancelled';
 	const NOT_AVAILABLE_IN_THIS_VERSION = 'NotAvailableInThisVersion';
 
-	protected  function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::NOT_SENT,

@@ -1,36 +1,46 @@
 <?php
 /**
- * 
- * 
+ * Enum
+ *
  * @author Roman Piták <roman@pitak.net>
- * 
+ * @package romanpitak/dotmailer-api-v2-client
+ * @subpackage DataTypes
+ *
  */
- 
+
 namespace DotMailer\Api\DataTypes;
 
-abstract class Enum implements IDataType {
+/**
+ * Class Enum
+ */
+abstract class Enum extends Mixed implements IEnum {
 
-	/** @var IDataType */
-	protected $value;
+	/** @var IDataType $data */
+	protected $data;
 
 	public function __construct($value) {
-		$valueClass = __NAMESPACE__ . '\\' . $this->getDataClass();
-		$this->value = new $valueClass($value);
-		if (!in_array($this->value, $this->getPossibleValues(), false)) {
+		$valueClass = $this->getDataClass();
+		$this->data = new $valueClass($value);
+		if (!in_array($this->data, $this->getPossibleValues(), false)) {
 			throw new \Exception('Invalid value');
 		}
 	}
 
-	/*
-	 * ========== Abstract ==========
-	 */
-
 	/**
 	 * Get data class name
 	 *
-	 * @return string Data class name
+	 * If you wish to change the data class, override this method.
+	 *
+	 * @return string Data class name with namespace
 	 */
-	abstract protected function getDataClass();
+	protected function getDataClass() {
+		return __NAMESPACE__ . '\\' . 'XsString';
+	}
+
+
+	/*
+	 * ========== Abstract ==========
+	 */
 
 	/**
 	 * Return an array of possible enum values
@@ -44,15 +54,15 @@ abstract class Enum implements IDataType {
 	 */
 
 	public function __toString() {
-		return (string) $this->value;
+		return (string)$this->data;
 	}
 
 	public function toArray() {
-		return $this->value->toArray();
+		return $this->data->toArray();
 	}
 
 	public function toJson() {
-		return $this->value->toJson();
+		return $this->data->toJson();
 	}
 
 }

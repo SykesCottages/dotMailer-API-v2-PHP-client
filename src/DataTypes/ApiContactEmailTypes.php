@@ -17,10 +17,6 @@ final class ApiContactEmailTypes extends Enum {
 	const HTML = 'Html';
 	const NOT_AVAILABLE_IN_THIS_VERSION = 'NotAvailableInThisVersion';
 
-	protected function getDataClass() {
-		return "XsString";
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::PLAIN_TEXT,

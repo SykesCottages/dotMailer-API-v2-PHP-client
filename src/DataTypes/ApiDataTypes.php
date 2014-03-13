@@ -21,10 +21,6 @@ final class ApiDataTypes extends Enum {
 	 * ========== Enum ==========
 	 */
 
-	protected function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::STRING,

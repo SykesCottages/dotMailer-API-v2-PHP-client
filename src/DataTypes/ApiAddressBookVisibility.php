@@ -1,30 +1,19 @@
 <?php
 /**
- * 
- * 
+ * ApiAddressBookVisibility
+ *
  * @author Roman Piták <roman@pitak.net>
- * 
+ * @package romanpitak/dotmailer-api-v2-client
+ * @subpackage DataTypes
+ *
  */
- 
- 
 
 namespace DotMailer\Api\DataTypes;
 
-
-final class ApiAddressBookVisibility extends Enum {
-
-	const VISIBLE = 'Private';
-	const HIDDEN = 'Public';
-	const NOT_AVAILABLE_IN_THIS_VERSION = 'NotAvailableInThisVersion';
-
-
-	/*
-	 * ========== Enum ==========
-	 */
-
-	protected function getDataClass() {
-		return 'XsString';
-	}
+/**
+ * Class ApiAddressBookVisibility
+ */
+final class ApiAddressBookVisibility extends Enum implements IApiAddressBookVisibility {
 
 	protected function getPossibleValues() {
 		return array(

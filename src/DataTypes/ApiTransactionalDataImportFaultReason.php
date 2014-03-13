@@ -26,10 +26,6 @@ final class ApiTransactionalDataImportFaultReason extends Enum {
 	const JSON_VALUE_INCOMPATIBLE_WITH_SCHEMA = 'JsonValueIncompatibleWithSchema';
 	const NOT_AVAILABLE_IN_THIS_VERSION = 'NotAvailableInThisVersion';
 
-	protected function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::UNKNOWN,

@@ -17,10 +17,6 @@ final class ApiSplitTestMetrics extends Enum {
 	const CLICKS = 'Clicks';
 	const NOT_AVAILABLE_IN_THIS_VERSION = 'NotAvailableInThisVersion';
 
-	protected  function getDataClass() {
-		return 'XsString';
-	}
-
 	protected function getPossibleValues() {
 		return array(
 			self::OPENS,
