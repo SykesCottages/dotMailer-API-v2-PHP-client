@@ -13,8 +13,4 @@ namespace DotMailer\Api\DataTypes;
 
 final class ApiContactSuppressionList extends JsonArray {
 
-	protected function getDataClass() {
-		return 'ApiContactSuppression';
-	}
-
-} 
+}

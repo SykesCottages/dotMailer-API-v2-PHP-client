@@ -10,16 +10,17 @@ namespace DotMailer\Api\DataTypes;
 
 abstract class JsonArray extends MagicArray {
 
-	/*
-	 * ========== Abstract ==========
-	 */
-
 	/**
 	 * Get data class name
 	 *
+	 * Gets the current class name and removes "List" from the end.
+	 * If you wish to specify some other data class name, override this method.
+	 *
 	 * @return string Data class name
 	 */
-	abstract protected function getDataClass();
+	protected function getDataClass() {
+		return substr(get_class($this), 0, -4);
+	}
 
 	/*
 	 * ========== MagicArray ==========
@@ -34,7 +35,7 @@ abstract class JsonArray extends MagicArray {
 	}
 
 	function convertValue($value, $offset = null) {
-		$dataClass = __NAMESPACE__ . '\\' . $this->getDataClass();
+		$dataClass = $this->getDataClass();
 		return new $dataClass($value);
 	}
 

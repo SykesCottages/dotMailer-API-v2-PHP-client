@@ -13,8 +13,4 @@ namespace DotMailer\Api\DataTypes;
 
 final class ApiCampaignFromAddressList extends JsonArray {
 
-	protected function getDataClass() {
-		return 'ApiCampaignFromAddress';
-	}
-
-} 
+}
