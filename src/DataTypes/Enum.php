@@ -22,7 +22,7 @@ abstract class Enum extends Mixed implements IEnum {
 		$valueClass = $this->getDataClass();
 		$this->data = new $valueClass($value);
 		if (!in_array($this->data, $this->getPossibleValues(), false)) {
-			throw new \Exception('Invalid value');
+			throw new InvalidValueException('Invalid value');
 		}
 	}
 
